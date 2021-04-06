@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Percentage: 
+<input type="number" id="percentage">
+<button id="pBtn">Okay</button>
+<br>
+Percentage must be between 1 and 100<br>
+<br>
+
+Integer: 
+<input type="number" id="integer">
+<button id="iBtn">Okay</button>
+<br>
+Cant be a negative integer<br>
+<br>
+
+Angle: 
+<input type="number" id="angle">
+<button id="aBtn">Okay</button>
+<br>
+Must be between 360.0 and -360.0, will also take modulo of number if not in range<br>
+<br>
+
+Postal Code: 
+<input type="text" id="postalcode">
+<button id="pcBtn">Okay</button>
+<br>
+Valid formats:<br>
+A0A 1B1<br>
+A0A-1B1<br>
+A0A1B1<br>
+<br>
+
+Phone Number: 
+<input type="text" id="pNumber">
+<button id="phBtn">Okay</button>
+<br>
+Valid formats:<br>
+(123) 456-7890<br>
+(123)456-7890<br>
+123-456-7890<br>
+123.456.7890<br>
+1234567890<br>
++31636363634<br>
+075-63546725<br>
+<br>
+
+Temperature (°C):
+<input type="text" id="temp">
+<button id="tBtn">Okay</button> 
+<form>
+    <label for="temperatures">Choose unit of temperature</label>
+    <select name="temperatures" id="selTemp">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+    </select>
+</form>
+<br>
+<br>
+
+Type "monkey" or "year" then move your cursor over the input field<br>
+If you click off the input field, refresh page<br>
+Tips:
+<input type="text" id="tips">
+
+
+</body>
+
+<script>
+document.getElementById("percentage").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("percentage").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("pBtn").addEventListener("click", myPercentage);
+function myPercentage (){
+    var inp = document.getElementById("percentage").value;
+    if (inp < 0) {
+        alert("Must be greater than 0");
+        return false;
+    }
+    if  (inp > 100){
+        alert("Must be less than 100");
+        return false;
+    }
+}
+
+
+
+document.getElementById("integer").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("integer").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("iBtn").addEventListener("click", myInteger);
+function myInteger(){
+    var inp = document.getElementById("integer").value;
+    if (inp < 0){
+        alert("Integer must be positive");
+        return false;
+    }
+}
+
+
+
+document.getElementById("postalcode").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("postalcode").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("pcBtn").addEventListener("click", myPostalcode);
+function myPostalcode () {
+    var inp = document.getElementById("postalcode").value;
+    var code = inp.match(/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i);
+    if (inp == code) {
+        alert("That postal code is valid.");
+        return false;
+    }
+}
+
+
+
+document.getElementById("angle").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("angle").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("aBtn").addEventListener("click", myAngle);
+function myAngle() {
+    inp = document.getElementById("angle").value;
+    var mod = inp % 360;
+
+    if(inp < -360.0){
+        alert("Must be greater than -360.0 and modulo of " + mod);
+        return false;
+    }
+    if(inp > 360.0){
+        alert("Must be less than 360.0 and modulo of " + mod);
+        return false
+    }
+}
+
+
+
+document.getElementById("pNumber").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("pNumber").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("phBtn").addEventListener("click", myPhonenumber);
+function myPhonenumber () {
+    var inp = document.getElementById("pNumber").value;
+    var code = inp.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)
+    if (inp == code) {
+        alert("That is a valid NA phone number.");
+        return false;
+    }
+}
+
+
+
+document.getElementById("temp").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("temp").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("tBtn").addEventListener("click", myTemperature);
+function myTemperature () {
+    var sel = document.getElementById("selTemp").value;
+    var inp = document.getElementById("temp").value;
+    var fah = inp * 1.8 + 32
+    var kel = inp + 273.15
+
+    if(sel=="celsius"){
+        alert(inp + " Degrees Celsius");
+        return false;
+    }
+
+    if(sel=="fahrenheit"){
+        alert(fah + " Degrees Fahrenheit");
+        return false;
+    }
+
+    if(sel=="kelvin"){
+        alert(kel + " Degrees Kelvin");
+        return false;
+    }
+}
+
+
+
+document.getElementById("tips").addEventListener("copy", function(event){
+    event.preventDefault()
+});
+document.getElementById("tips").addEventListener("paste", function(event){
+    event.preventDefault()
+});
+document.getElementById("tips").addEventListener("mouseover", myTips)
+function myTips() {
+var inp = document.getElementById("tips").value;
+
+    if(inp=="monkey"){
+        alert("Monkeys are scared of snakes");
+        return false; 
+    }
+    if(inp=="year"){
+        alert("The year is 2020");
+        return false;
+    }
+}
+</script>
+</html>

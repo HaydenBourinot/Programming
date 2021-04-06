@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<body>
+
+<h2>Dimesion Changer</h2>
+<p>Changes in increments of 20 px</p>
+
+
+<img id="myImg" src="stickfigure.jpg" width="300px" height="300px">
+
+<br>
+<h3>Height</h3>
+<p id="height">300</p>
+<h3>Width</h3>
+<p id="width">300</p>
+
+<br>
+
+<button type="button" onclick="increaseWidth()">Increase Width</button> 
+<button type="button" onclick="increaseHeight()">Increase Height</button><br>
+<button type="button" onclick="decreaseWidth()">Decrease Width</button>
+<button type="button" onclick="decreaseHeight()">Decrease Height</button>
+
+
+<script> 
+function increaseWidth () {
+    var myWidth = document.getElementById("myImg");
+    var width = myWidth.offsetWidth;
+    var newWidth = width + 20;
+    myWidth.style.width = newWidth + "px";
+    document.getElementById("width").innerHTML = newWidth;
+    if (newWidth > "600") {
+        newWidth = 300;
+    }
+}
+
+function increaseHeight () {
+    var myHeight = document.getElementById("myImg");
+    var height = myHeight.offsetHeight;
+    var newHeight = height + 20;
+    myHeight.style.height = newHeight + "px";
+    document.getElementById("height").innerHTML = newHeight;
+    
+}
+
+function decreaseWidth () {
+    var myWidth = document.getElementById("myImg");
+    var width = myWidth.offsetWidth;
+    var newWidth = width - 20;
+    myWidth.style.width = newWidth + "px";
+    document.getElementById("width").innerHTML = newWidth;
+}
+
+function decreaseHeight () {
+    var myHeight = document.getElementById("myImg");
+    var height = myHeight.offsetHeight;
+    var newHeight = height - 20;
+    myHeight.style.height = newHeight + "px";
+    document.getElementById("height").innerHTML = newHeight;
+}
+
+</script>
+</body>
+</html>

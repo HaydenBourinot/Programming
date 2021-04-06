@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<body>
+
+<h2>Calculator</h2>
+
+
+<body>
+    <form name="calculator">
+        <table>
+            <tr>
+                <p id="hi"></p>
+                <td colspan="5">
+                    <input type="text" name="display" id="display" oninput="myFunction()"><br>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="button" name="one" value="1" onclick="calculator.display.value += '1'">
+                </td>
+                <td>
+                    <input type="button" name="two" value ="2" onclick="calculator.display.value += '2'">
+                </td>
+                <td>
+                    <input type="button" name="three" value="3" onclick="calculator.display.value += '3'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="plus" id="plus" value="+" onclick="calculator.display.value += '+'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="multiply" id="multiply" value="*" onclick="calculator.display.value += '*'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="four" value="4" onclick="calculator.display.value += '4'">
+                </td>
+                <td>
+                    <input type="button" name="five" value="5" onclick="calculator.display.value += '5'">
+                </td>
+                <td>
+                    <input type="button" name="six" value="6" onclick="calculator.display.value += '6'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="subtract" id="subtract" value="- " onclick="calculator.display.value += '-'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="divide" value="/" id="divide" onclick="calculator.display.value += '/'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="seven" value="7" onclick="calculator.display.value += '7'">
+                </td>
+                <td>
+                    <input type="button" name="eight" value="8" onclick="calculator.display.value += '8'">
+                </td>
+                <td>
+                    <input type="button" name="nine" value="9" onclick="calculator.display.value += '9'">
+                </td>
+                <td>
+                    <input type="button" name="operator" name="equal" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+                </td>
+                <td>
+                    <input type="button" name="operator" name="clear" value="C" onclick="calculator.display.value = ' '">
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="button" name="zero" value="0" onclick="calculator.display.value += '0'">
+                </td>            
+            </tr>
+        </table>
+
+
+
+
+    </form>
+</body>
+
+<script> 
+// var plus = document.getElementById("plus");
+// plus.addEventListener("mouseover", myFuction);
+
+// var subtract = document.getElementById("subtract");
+// subtract.addEventListener("mouseover", myFuction2);
+
+// var multiply = document.getElementById("multiply");
+// multiply.addEventListener("mouseover", myFuction3);
+
+// var divide = document.getElementById("divide");
+// divide.addEventListener("mouseover", myFuction4);
+
+// function display(){
+//     document.write(calculator.display.value);
+// }
+
+
+
+function myFuction() {
+    var x = document.getElementById("display");
+    document.getElementById("hi").innerHTML = x;
+}
+
+function myFuction2() {
+    alert("subtract")
+}
+
+function myFuction3() {
+    alert("multiply")
+}
+
+function myFuction4() {
+    alert("divide")
+}
+</script>
+</body>
+</html>

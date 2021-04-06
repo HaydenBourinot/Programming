@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    
+    <p id="demo"></p>
+
+    Make: <span id="make"></span><br>
+    Model: <span id="model"></span><br>
+    Year: <span id="year"></span><br>
+    Colour: <span id="colour"></span><br>
+    Transmission: <span id="transmission"></span><br>
+
+    <button onclick="myCar.display();">My Car</button><br>
+    <button onclick="dadCar.display();">Dads Car</button>
+
+</body>
+
+<script>
+
+    class Car {
+        constructor (mk, mdl, yr, clr, trans) {
+            this.make = mk;
+            this.model = mdl;
+            this.year = yr;
+            this.colour = clr;
+            this.transmission = trans;
+            this.display = function () {
+                document.getElementById("make").innerHTML = this.make;
+                document.getElementById("model").innerHTML = this.model;
+                document.getElementById("year").innerHTML = this.year;
+                document.getElementById("colour").innerHTML = this.colour;
+                document.getElementById("transmission").innerHTML = this.transmission;
+            }
+        }
+    }
+
+
+    // function display () {
+    //     document.getElementById("make").innerHTML = this.make;
+    //     document.getElementById("model").innerHTML = this.model;
+    //     document.getElementById("year").innerHTML = this.year;
+    //     document.getElementById("colour").innerHTML = this.colour;
+    //     document.getElementById("transmission").innerHTML = this.transmission;
+    // }
+
+
+
+// function Car(mk, mdl, yr, clr, trans) {
+//     this.make = mk;
+//     this.model = mdl;
+//     this.year = yr;
+//     this.colour = clr;
+//     this.transmission = trans;
+//     this.display = function () {
+//         document.getElementById("make").innerHTML = this.make;
+//         document.getElementById("model").innerHTML = this.model;
+//         document.getElementById("year").innerHTML = this.year;
+//         document.getElementById("colour").innerHTML = this.colour;
+//         document.getElementById("transmission").innerHTML = this.transmission;
+//     }
+// }
+
+var myCar = new Car("Honda Accord", "EX-L", "2010", "Grey", "Manual");
+var dadCar = new Car("Ford Ranger", "Standard", "2020", "Red", "Automatic")
+
+
+
+</script>
+
+</html>
